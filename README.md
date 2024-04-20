@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# HireQuotient Assignment
+## Live link of the assignment: https://hirequotient-2y4w.onrender.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/AbhishekKrGhosh/hirequotient/assets/92973940/60f916e8-49a5-4e83-bba7-cf63762cdf8f)
 
-## Available Scripts
 
-In the project directory, you can run:
+![image](https://github.com/AbhishekKrGhosh/hirequotient/assets/92973940/ab990f61-adc8-4367-baf9-df972b64dd52)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![image](https://github.com/AbhishekKrGhosh/hirequotient/assets/92973940/e0b2172e-0e17-4e12-a0ef-538f5bddc8d7)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The data is being fetched from the api: https://canopy-frontend-task.vercel.app/api/holdings
 
-### `npm test`
+This project fetches data from an API endpoint using Axios, organizes the data based on asset classes, and dynamically displays it in a collapsible table format using Material-UI components. Each group of holdings can be expanded or collapsed individually, providing a user-friendly interface to view and manage data. The styling, including background colors and borders, is implemented using styled components for a visually appealing and cohesive design. This component enhances data presentation and interaction, making it suitable for applications requiring organized and interactive data display in a table format.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Holdings Table Component
 
-### `npm run build`
+This React component fetches data from an API endpoint using Axios and displays the data in a table format using Material-UI components. Here's a breakdown of the key elements:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React for building the UI components.
+- Axios for making asynchronous HTTP requests.
+- Material-UI for UI components and styling.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Styled Components
 
-### `npm run eject`
+- `Component`, `StyledArrowUp`, `StyledKeyboardArrowDown`, `TableCellNew`, `TableCellNewData`, and `TypographyNew` are styled components using Material-UI's styling capabilities.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## State Management
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `useState` and `useEffect` hooks are used for managing component-level state and handling side effects like data fetching.
+- `holdingsData` stores the fetched data.
+- `expandedGroups` manages the state of expanded groups in the table.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Data Fetching
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- The `useEffect` hook is used to fetch data from the specified API endpoint (`https://canopy-frontend-task.now.sh/api/holdings`) when the component mounts.
+- Fetched data is stored in `holdingsData` state.
 
-## Learn More
+## Rendering Table
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Data is grouped based on `asset_class` using `reduce` to prepare for rendering in grouped sections.
+- Mapped over grouped data to render each group in a collapsible section with expand/collapse functionality.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Styling
 
-### Code Splitting
+- Background colors, borders, and other styles are applied using styled components to achieve a visually appealing UI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<hr>
 
-### Analyzing the Bundle Size
+# Run the Project Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Clone the repository:
 
-### Making a Progressive Web App
+`git clone https://github.com/AbhishekKrGhosh/hirequotient.git`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Navigate to the project directory:
 
-### Advanced Configuration
+`cd hirequotient`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Install dependencies:
+`npm install`
 
-### Deployment
+### Start the development server:
+`npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### View the Project
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To view the project in your browser, open [http://localhost:3000](http://localhost:3000) in your web browser after starting the development server.
